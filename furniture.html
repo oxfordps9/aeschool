@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XStyle | Luxury Furniture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'xstyle-gold': '#C5A059',
+                        'xstyle-dark': '#0A0A0A',
+                        'xstyle-card': '#141414',
+                    },
+                    fontFamily: {
+                        'display': ['Cormorant Garamond', 'serif'],
+                        'body': ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            font-family: 'Outfit', sans-serif;
+            color: #E5E5E5;
+        }
+        .font-display { font-family: 'Cormorant Garamond', serif; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; border-radius: 3px; }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 2s infinite; }
+
+        /* Glassmorphism Card */
+        .glass {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Hero Gradient Overlay */
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(5,5,5,1) 0%, rgba(5,5,5,0.8) 50%, rgba(5,5,5,0.4) 100%);
+        }
+
+        /* Abstract Shapes */
+        .shape-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-xstyle-gold flex items-center justify-center rotate-45">
+                    <span class="text-black font-bold text-xl -rotate-45">X</span>
+                </div>
+                <span class="font-display text-3xl font-bold text-white tracking-wide">Style</span>
+            </a>
+
+            <!-- Links -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium uppercase tracking-wider">
+                <a href="#home" class="text-white/70 hover:text-xstyle-gold transition">Home</a>
+                <a href="#catalog" class="text-white/70 hover:text-xstyle-gold transition">Catalog</a>
+                <a href="#about" class="text-white/70 hover:text-xstyle-gold transition">About</a>
+                <a href="#contact" class="text-white/70 hover:text-xstyle-gold transition">Contact</a>
+            </div>
+
+            <!-- CTA -->
+            <a href="#catalog" class="hidden md:block px-6 py-2.5 border border-xstyle-gold text-xstyle-gold text-sm font-semibold hover:bg-xstyle-gold hover:text-black transition-all duration-300">
+                Shop Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Luxury Furniture Background" 
+                 class="w-full h-full object-cover opacity-60">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+
+        <!-- Abstract Illustration Elements -->
+        <div class="shape-blob w-96 h-96 bg-xstyle-gold top-20 -left-48"></div>
+        <div class="shape-blob w-72 h-72 bg-purple-600 bottom-20 right-0"></div>
+        
+        <!-- SVG Line Illustration (Top Right) -->
+        <svg class="absolute top-20 right-10 w-64 h-64 text-white/10 z-0" viewBox="0 0 200 200">
+            <path fill="none" stroke="currentColor" stroke-width="0.5" d="M100,10 L190,100 L100,190 L10,100 Z M50,50 L150,150 M150,50 L50,150" />
+        </svg>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block">
+                    <span class="text-xstyle-gold font-medium tracking-[0.2em] uppercase text-sm">New Collection 2024</span>
+                </div>
+                <h1 class="font-display text-6xl md:text-8xl font-bold leading-none">
+                    Redefine <br>
+                    <span class="text-xstyle-gold">Luxury</span> Living
+                </h1>
+                <p class="text-gray-300 text-lg max-w-md leading-relaxed">
+                    Discover furniture that tells a story. Handcrafted elegance designed to transform your space into a masterpiece of comfort and style.
+                </p>
+                
+                <div class="flex gap-4 pt-4">
+                    <a href="#catalog" class="px-8 py-4 bg-xstyle-gold text-black font-bold uppercase text-sm tracking-wider hover:bg-white transition flex items-center gap-2 group">
+                        Explore Collection 
+                        <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="px-8 py-4 border border-white/30 text-white font-bold uppercase text-sm tracking-wider hover:border-xstyle-gold hover:text-xstyle-gold transition">
+                        <i class="fab fa-whatsapp mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Floating Image Widget -->
+            <div class="hidden lg:flex justify-center relative">
+                <div class="relative animate-float">
+                    <div class="absolute inset-0 border border-xstyle-gold transform rotate-6 rounded-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop" 
+                         alt="Featured Sofa" 
+                         class="relative z-10 w-96 h-80 object-cover rounded-lg shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 glass p-4 rounded-lg">
+                        <p class="text-xs text-gray-400">Starting From</p>
+                        <p class="text-2xl font-bold text-xstyle-gold">$1,299</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="catalog" class="py-24 px-6 relative overflow-hidden">
+        <!-- Background Illustration -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 bg-repeat" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-xstyle-gold font-medium tracking-widest uppercase">Browse</span>
+                <h2 class="font-display text-5xl md:text-6xl font-bold mt-4">Top Categories</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Category 1 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?q=80&w=800&auto=format&fit=crop" 
+                         alt="Living Room" 
+                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="font-display text-3xl font-bold mb-2">Living Room</h3>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">Sofas, Tables & More</p>
+                        <span class="text-xstyle-gold font-semibold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Shop Now <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800&auto=format&fit=crop" 
+                         alt="Bedroom" 
+                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="font-display text-3xl font-bold mb-2">Bedroom</h3>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">Beds, Wardrobes & Nightstands</p>
+                        <span class="text-xstyle-gold font-semibold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Shop Now <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="group relative h-96 overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800&auto=format&fit=crop" 
+                         alt="Dining" 
+                         class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="font-display text-3xl font-bold mb-2">Dining</h3>
+                        <p class="text-gray-300 mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">Tables, Chairs & Storage</p>
+                        <span class="text-xstyle-gold font-semibold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Shop Now <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-24 px-6 bg-xstyle-card">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+                <div>
+                    <span class="text-xstyle-gold font-medium tracking-widest uppercase">Handpicked</span>
+                    <h2 class="font-display text-5xl md:text-6xl font-bold mt-4">Best Sellers</h2>
+                </div>
+                <a href="#" class="text-gray-400 hover:text-xstyle-gold transition border-b border-gray-700 pb-1">View All Products</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden bg-neutral-900 mb-4">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=600&auto=format&fit=crop" 
+                             alt="Modern Chair" 
+                             class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-xstyle-gold text-black text-xs font-bold px-3 py-1">NEW</div>
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="https://wa.me/1234567890?text=I'm interested in the Modern Accent Chair" target="_blank" class="bg-white text-black px-6 py-3 font-semibold hover:bg-xstyle-gold transition">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-1">Modern Accent Chair</h3>
+                    <p class="text-xstyle-gold font-bold text-lg">$450.00</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden bg-neutral-900 mb-4">
+                        <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=600&auto=format&fit=crop" 
+                             alt="Coffee Table" 
+                             class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="https://wa.me/1234567890?text=I'm interested in the Marble Coffee Table" target="_blank" class="bg-white text-black px-6 py-3 font-semibold hover:bg-xstyle-gold transition">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-1">Marble Coffee Table</h3>
+                    <p class="text-xstyle-gold font-bold text-lg">$890.00</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden bg-neutral-900 mb-4">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=600&auto=format&fit=crop" 
+                             alt="Luxury Bed" 
+                             class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1">SALE</div>
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="https://wa.me/1234567890?text=I'm interested in the Velvet King Bed" target="_blank" class="bg-white text-black px-6 py-3 font-semibold hover:bg-xstyle-gold transition">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-1">Velvet King Bed</h3>
+                    <div class="flex gap-3">
+                        <p class="text-gray-500 line-through">$2,400.00</p>
+                        <p class="text-xstyle-gold font-bold text-lg">$1,999.00</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden bg-neutral-900 mb-4">
+                        <img src="https://images.unsplash.com/photo-1594620302200-9a762244a156?q=80&w=600&auto=format&fit=crop" 
+                             alt="Bookshelf" 
+                             class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <a href="https://wa.me/1234567890?text=I'm interested in the Minimalist Bookshelf" target="_blank" class="bg-white text-black px-6 py-3 font-semibold hover:bg-xstyle-gold transition">
+                                Inquire Now
+                            </a>
+                        </div>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold mb-1">Minimalist Bookshelf</h3>
+                    <p class="text-xstyle-gold font-bold text-lg">$650.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Parallax Section -->
+    <section id="about" class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Interior Design" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        
+        <!-- Abstract Lines Illustration -->
+        <svg class="absolute left-0 top-0 h-full w-32 text-white/5 z-0" viewBox="0 0 100 400" preserveAspectRatio="none">
+            <path d="M50,0 L50,400 M0,100 L100,100 M0,200 L100,200 M0,300 L100,300" stroke="currentColor" stroke-width="1" fill="none"/>
+        </svg>
+
+        <div class="relative z-10 text-center max-w-3xl px-6">
+            <h2 class="font-display text-4xl md:text-6xl font-bold mb-6">Crafting Elegance Since 2010</h2>
+            <p class="text-gray-300 text-lg mb-8">
+                At XStyle, we believe furniture is more than utility—it's art. Our master craftsmen blend traditional techniques with modern aesthetics to create pieces that last a lifetime.
+            </p>
+            <a href="#contact" class="px-8 py-4 border border-white text-white font-bold uppercase text-sm tracking-wider hover:bg-white hover:text-black transition">
+                Our Story
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-xstyle-dark pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="space-y-6 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-xstyle-gold flex items-center justify-center rotate-45">
+                            <span class="text-black font-bold text-xl -rotate-45">X</span>
+                        </div>
+                        <span class="font-display text-3xl font-bold text-white">Style</span>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Redefining luxury living with handcrafted furniture that blends timeless elegance with modern design.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-xstyle-gold transition">Home</a></li>
+                        <li><a href="#" class="hover:text-xstyle-gold transition">Shop</a></li>
+                        <li><a href="#" class="hover:text-xstyle-gold transition">Collections</a></li>
+                        <li><a href="#" class="hover:text-xstyle-gold transition">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Support</h4>
+                    <ul class="space-y-3 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-xstyle-gold transition">FAQs</a></li>
+                        <li><a href="#" class="hover:text-xstyle-gold transition">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-xstyle-gold transition">Care Guide</a></li>
+                        <li><a href="#" class="hover:text-xstyle-gold transition">Warranty</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Stay Updated</h4>
+                    <p class="text-gray-500 text-sm mb-4">Subscribe to get special offers and updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-neutral-900 border border-neutral-800 px-4 py-2 text-sm w-full focus:outline-none focus:border-xstyle-gold">
+                        <button class="bg-xstyle-gold text-black px-4 font-bold hover:bg-white transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-sm">
+                    © 2024 XStyle Furniture. All rights reserved.
+                </p>
+                <p class="text-gray-700 text-xs tracking-widest uppercase">
+                    Designed by <span class="text-xstyle-gold font-semibold">elitewebs</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/1234567890" target="_blank" 
+       class="fixed bottom-8 right-8 z-50 bg-[#25D366] p-5 rounded-full shadow-2xl animate-pulse-glow hover:scale-110 transition-transform group">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+        <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-black text-sm font-semibold px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            Chat with us!
+        </span>
+    </a>
+
+    <!-- Navbar Background Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/80', 'backdrop-blur-md', 'py-3', 'shadow-lg');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-black/80', 'backdrop-blur-md', 'py-3', 'shadow-lg');
+                navbar.classList.add('py-4');
+            }
+        });
+    </script>
+
+</body>
+</html>
